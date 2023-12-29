@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&family=Rubik+Doodle+Shadow&display=swap"
+      rel="stylesheet"
+    />
+    <title>Countdown Timer Example</title>
+  </head>
+  <body>
+    <h1 id="timer">10</h1>
+    <br />
+    <button id="btn">Start</button>
+
+    <script>
+      var timerElement = document.getElementById("timer");
+      var ele = document.getElementById("btn");
+
+      ele.onclick = function () {
+        var count = 10;
+
+        function countdown() {
+          timerElement.innerHTML = count;
+
+          if (count > 0) {
+            count--;
+            setTimeout(countdown, 1000);
+          } else {
+            timerElement.innerHTML = "Happy New Year!";
+          }
+        }
+
+        countdown();
+      };
+    </script>
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: "Rubik Doodle Shadow";
+        background: linear-gradient(to right bottom, #ff8c00, #ff5733);
+      }
+
+      h1 {
+        font-size: 100px;
+        margin: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        color: #ffd700;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 1.5em;
+        background-color: #4caf50;
+        color: #2e741d;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: forestgreen;
+      }
+    </style>
+  </body>
+</html>
